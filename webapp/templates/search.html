@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+{% if query %}
+
+</hr>
+
+ <table class="table table-striped table-hover table-bordered">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">jobs</th>
+      <th scope="col">location</th>
+      <th scope="col">dates</th>
+      <th scope="col">duration</th>
+      <th scope="col">TJM</th>
+      <th scope="col">Links</th>
+    <!--  <th scope="col">links</th>-->
+    </tr>
+  </thead>
+  <tbody>
+   
+   <tr>
+  	{% for result in results %}
+  	<tr scope="col">
+  	 {% for element in result %}
+       
+  		<td>{{ element }}</td>
+       
+
+  		{% endfor %}
+
+  	</tr>
+  	{% endfor %}
+  </tr>
+
+
+  </tbody>
+</table>
+
+{% else %}
+
+<p>Please enter a technologie name in the search bar</p>
+       #SO is formatting "Query" in HTML for some reason. Nonetheless...
+{% endif %}
+
+
+
+
+{% endblock %}
